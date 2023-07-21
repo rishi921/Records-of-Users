@@ -1,0 +1,96 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stay Vista Records</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Stay Vista Records</h1>
+        <div class="button-container">
+            <a href="addUser.html" class="addUserLink">Add User</a>
+            <!-- <a href="sv.py" -->
+            <button class="editUserBtn">Edit User</button>
+            <button class="deleteUserBtn">Delete User</button>
+        </div>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Mobile Number</th>
+                    <!-- <th>State</th> -->
+                    <!-- <th>City</th> -->
+                    <th>Pin Code</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- User records will be added dynamically here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Retrieve user records from local storage
+        var users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Display user records in the table
+        var userTableBody = document.getElementById("userTableBody");
+
+        function displayUserRecords() {
+            users.forEach(function (user) {
+                var newRow = document.createElement("tr");
+
+                var firstNameCell = document.createElement("td");
+                firstNameCell.textContent = user.firstName;
+
+                var lastNameCell = document.createElement("td");
+                lastNameCell.textContent = user.lastName;
+
+                var mobileNumberCell = document.createElement("td");
+                mobileNumberCell.textContent = user.mobileNumber;
+
+                // var State = document.createElement("td");
+                // StateCell.textContent = user.State;
+
+                // var City= document.createElement("td");
+                // CityCell.textContent = user.City;
+
+                var pinCodeCell = document.createElement("td");
+                pinCodeCell.textContent = user.pinCode;
+
+                newRow.appendChild(firstNameCell);
+                newRow.appendChild(lastNameCell);
+                newRow.appendChild(mobileNumberCell);
+                // newRow.appendChild(StateCell);
+                // newRow.appendChild(CityCell);
+                newRow.appendChild(pinCodeCell);
+
+                userTableBody.appendChild(newRow);
+            });
+        }
+
+        // Call the function to display existing user records
+        displayUserRecords();
+
+        // Clear user records from local storage when the page is refreshed
+        window.addEventListener("beforeunload", function () {
+            // Only clear the local storage if there are no existing records
+            if (users.length === 0) {
+                localStorage.removeItem("users");
+            }
+        });
+
+
+    // Clear user records from local storage when the page is refreshed
+    // window.addEventListener("beforeunload", function() {
+    //   localStorage.removeItem("users");
+    // });
+    </script>
+</body>
+
+</html>

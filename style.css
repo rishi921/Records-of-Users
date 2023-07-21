@@ -1,0 +1,105 @@
+/* style.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: blanchedalmond;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Index Page Styles */
+.addUserLink {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #49a54c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.editUserBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6aecd0;
+    font-size: medium;
+    font-weight: bold;
+    color: #0e0101;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.deleteUserBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f11a1a;
+    color: #fff;
+    font-size: medium;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Add User Page Styles */
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.button-container button {
+    margin-left: 10px;
+}
